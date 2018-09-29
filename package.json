@@ -1,0 +1,60 @@
+{
+  "name": "tomato-timer",
+  "version": "0.1.0",
+  "description": "Tomato timer",
+  "main": "build/index.html",
+  "scripts": {
+    "lint": "npx eslint ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npx eslint",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:tumbumer/tomato-timer.git"
+  },
+  "keywords": [
+    "javascript",
+    "tomato-timer"
+  ],
+  "engines": {
+    "node": ">=8.12",
+    "npm": ">=6.4"
+  },
+  "author": {
+    "name": "Denis Dvoretskov",
+    "email": "denis@tumbum.com"
+  },
+  "contributors": [
+    {
+      "name": "Denis Dvoretskov",
+      "email": "denis@tumbum.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tumbumer/tomato-timer/issues"
+  },
+  "homepage": "https://github.com/tumbumer/tomato-timer#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
+    "npm-check": "^5.9.0",
+    "prettier": "^1.14.3"
+  }
+}
