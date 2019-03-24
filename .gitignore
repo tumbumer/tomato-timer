@@ -6,6 +6,7 @@ node_modules
 npm-debug.log
 
 # Project
+
 build
 config/dev.local.env
 config/prod.local.env
