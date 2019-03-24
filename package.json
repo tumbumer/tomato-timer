@@ -3,22 +3,9 @@
   "version": "0.1.0",
   "description": "Tomato timer",
   "main": "build/index.html",
-  "scripts": {
-    "build": "scripts/build.sh",
-    "lint": "npx eslint ./src",
-    "start": "scripts/start.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "npx eslint",
-      "git add"
-    ]
+  "engines": {
+    "node": ">=8.12",
+    "npm": ">=6.4"
   },
   "repository": {
     "type": "git",
@@ -28,10 +15,6 @@
     "javascript",
     "tomato-timer"
   ],
-  "engines": {
-    "node": ">=8.12",
-    "npm": ">=6.4"
-  },
   "author": {
     "name": "Denis Dvoretskov",
     "email": "denis@tumbum.com"
@@ -47,20 +30,38 @@
     "url": "https://github.com/tumbumer/tomato-timer/issues"
   },
   "homepage": "https://github.com/tumbumer/tomato-timer#readme",
+  "lint-staged": {
+    "*.js": [
+      "npx eslint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "build": "scripts/build.sh",
+    "lint": "npx eslint ./src",
+    "npm-check": "npx npm-check -uE",
+    "start": "scripts/start.sh",
+    "test": "echo No tests - no pain"
+  },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.6.1",
+    "eslint": "5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-prettier": "^2.7.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-prettier": "3.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.0.1",
-    "lint-staged": "^7.3.0",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.5",
     "npm-check": "^5.9.0",
-    "prettier": "^1.14.3",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9"
+    "prettier": "1.16.4",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.2.1"
   }
 }
