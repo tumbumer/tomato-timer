@@ -1,5 +1,8 @@
+'use strict';
+
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { BUILD_DIR } = process.env;
 
@@ -10,9 +13,13 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, BUILD_DIR),
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
+  },
+  plugins: [new HtmlPlugin({ template: 'src/index.html' }), new MiniCssExtractPlugin()],
 };

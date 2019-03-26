@@ -1,4 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+'use strict';
+
+const HtmlPlugin = require('html-webpack-plugin');
 
 const { HOST, PORT } = process.env;
 
@@ -8,11 +10,15 @@ module.exports = {
   output: {
     filename: 'index.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  plugins: [new HtmlPlugin({ template: 'src/index.html' })],
   devServer: {
     host: HOST,
     port: PORT,
