@@ -1,3 +1,83 @@
-html {
-  background-color: gray;
+/* fonts */
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../assets/oswald-bold.ttf');
+}
+
+/* root layout */
+
+.root {
+  display: grid;
+  grid-template-areas:
+    'main'
+    'footer';
+  grid-template-rows: 1fr 24px;
+  height: 100vh;
+
+  margin: 0;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* main frame layout */
+
+.main-frame {
+  display: grid;
+  grid-template-areas:
+    'timer'
+    'control';
+  grid-template-rows: 180px auto 60px auto;
+}
+
+.timer {
+  grid-area: timer;
+  grid-row: 2;
+
+  font-family: 'Oswald';
+  font-size: 260px;
+  line-height: 1;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.control {
+  grid-area: control;
+  grid-row: 4;
+  text-align: center;
+}
+
+/* controls */
+
+.control-button {
+  border: 1px solid #ccc;
+  border-radius: 10%;
+  color: black;
+  padding: 0;
+  cursor: pointer;
+
+  opacity: 0.38;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+
+  width: 100px;
+  height: 60px;
+}
+
+.control-button-pause {
+  background-image: url('../assets/pause.svg');
+}
+
+.control-button-cancel {
+  background-image: url('../assets/cancel.svg');
+  margin-left: 24px;
 }

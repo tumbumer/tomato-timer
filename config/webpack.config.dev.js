@@ -16,6 +16,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(ttf|svg)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [new HtmlPlugin({ template: 'src/index.html' })],
